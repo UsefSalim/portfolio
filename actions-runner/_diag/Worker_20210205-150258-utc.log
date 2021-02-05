@@ -1,0 +1,3290 @@
+[2021-02-05 15:02:58Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2021-02-05 15:02:58Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:02:58Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:02:58Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.credentials'
+[2021-02-05 15:02:58Z INFO Worker] Version: 2.276.1
+[2021-02-05 15:02:58Z INFO Worker] Commit: 5effa808be96eae7f2e08d713426b8d056bddff1
+[2021-02-05 15:02:58Z INFO Worker] Culture: fr-FR
+[2021-02-05 15:02:58Z INFO Worker] UI Culture: fr-FR
+[2021-02-05 15:02:58Z INFO Worker] Waiting to receive the job message from the channel.
+[2021-02-05 15:02:58Z INFO Worker] Message received.
+[2021-02-05 15:02:58Z INFO Worker] Job message:
+ {
+  "fileTable": [
+    ".github/workflows/node.js.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/checkout",
+        "ref": "v2",
+        "repositoryType": "GitHub",
+        "path": ""
+      },
+      "condition": "success()",
+      "id": "2ad33848-49ea-50c8-ba3c-6d56baf65020",
+      "name": "actionscheckout"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/setup-node",
+        "ref": "v1",
+        "repositoryType": "GitHub",
+        "path": ""
+      },
+      "displayNameToken": {
+        "type": 3,
+        "file": 1,
+        "line": 24,
+        "col": 13,
+        "expr": "format('Use Node.js {0}', matrix.node-version)"
+      },
+      "inputs": {
+        "type": 2,
+        "file": 1,
+        "line": 27,
+        "col": 9,
+        "map": [
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 27,
+              "col": 9,
+              "lit": "node-version"
+            },
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 27,
+              "col": 23,
+              "expr": "matrix.node-version"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "6e18ae3a-0002-5382-d895-85ba37ca0ed3",
+      "name": "actionssetup-node"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 28,
+              "col": 12,
+              "lit": "npm i"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "6df6c8b2-37e7-567b-dfd0-96a16ebefadf",
+      "name": "run1"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 29,
+              "col": 12,
+              "lit": "npm run build --if-present"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "2091dd97-b57a-59d7-148a-fbbcbde32eec",
+      "name": "run2"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 30,
+              "col": 12,
+              "lit": "npm test"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "d80f8feb-80b4-51bd-c876-203cada35044",
+      "name": "run3"
+    }
+  ],
+  "variables": {
+    "system.isScheduled": {
+      "value": "False"
+    },
+    "system": {
+      "value": "actions"
+    },
+    "system.hosttype": {
+      "value": "actions"
+    },
+    "system.servertype": {
+      "value": "Hosted"
+    },
+    "system.culture": {
+      "value": "en-US"
+    },
+    "system.collectionId": {
+      "value": "b3bd432c-0c6e-4c3d-b878-440c6b4e90c6"
+    },
+    "system.collectionUri": {
+      "value": "https://pipelines.actions.githubusercontent.com/dsEezDOEpkxecRpJu6l8825JZ8M3rEiMYf4R2OoC8zxBeOnJiL/"
+    },
+    "system.taskDefinitionsUri": {
+      "value": "https://pipelines.actions.githubusercontent.com/dsEezDOEpkxecRpJu6l8825JZ8M3rEiMYf4R2OoC8zxBeOnJiL/"
+    },
+    "system.pipelineStartTime": {
+      "value": "2021-02-05 15:02:55+00:00"
+    },
+    "system.definitionId": {
+      "value": "3"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.UseContextNameForGITHUBACTION": {
+      "value": "true"
+    },
+    "system.teamProjectId": {
+      "value": "00000000-0000-0000-0000-000000000000"
+    },
+    "build.buildId": {
+      "value": "2"
+    },
+    "build.containerId": {
+      "value": "145122"
+    },
+    "system.definitionName": {
+      "value": "deployReactapp"
+    },
+    "system.planId": {
+      "value": "b3775c74-5cc6-4a70-8523-30f3f42c07bf"
+    },
+    "system.timelineId": {
+      "value": "b3775c74-5cc6-4a70-8523-30f3f42c07bf"
+    },
+    "system.stageDisplayName": {
+      "value": "__default"
+    },
+    "system.stageId": {
+      "value": "96ac2280-8cb4-5df5-99de-dd2da759617d"
+    },
+    "system.stageName": {
+      "value": "__default"
+    },
+    "system.stageAttempt": {
+      "value": "1"
+    },
+    "system.phaseDisplayName": {
+      "value": "build"
+    },
+    "system.phaseId": {
+      "value": "6884a131-87da-5381-61f3-d7acc3b91d76"
+    },
+    "system.phaseName": {
+      "value": "build"
+    },
+    "system.phaseAttempt": {
+      "value": "1"
+    },
+    "system.jobIdentifier": {
+      "value": "build._14_x"
+    },
+    "system.jobAttempt": {
+      "value": "1"
+    },
+    "System.JobPositionInPhase": {
+      "value": "1"
+    },
+    "System.TotalJobsInPhase": {
+      "value": "2"
+    },
+    "system.github.job": {
+      "value": "build"
+    },
+    "system.jobDisplayName": {
+      "value": "build (14.x)"
+    },
+    "system.jobId": {
+      "value": "006c7e6f-00a1-57ff-4d9c-5871960fc9e4"
+    },
+    "system.jobName": {
+      "value": "_14_x"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "PipelineAgentJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "Actions",
+    "version": 12,
+    "planId": "b3775c74-5cc6-4a70-8523-30f3f42c07bf",
+    "planGroup": "Actions:00000000-0000-0000-0000-000000000000:1",
+    "artifactUri": "vstfs:///Build/Build/2",
+    "artifactLocation": null,
+    "definition": {
+      "_links": {},
+      "id": 3,
+      "name": "deployReactapp"
+    },
+    "owner": {
+      "_links": {},
+      "id": 3,
+      "name": "UsefSalim"
+    }
+  },
+  "timeline": {
+    "id": "b3775c74-5cc6-4a70-8523-30f3f42c07bf",
+    "changeId": 23,
+    "location": null
+  },
+  "jobId": "006c7e6f-00a1-57ff-4d9c-5871960fc9e4",
+  "jobDisplayName": "build (14.x)",
+  "jobName": "_14_x",
+  "requestId": 2,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "b3bd432c-0c6e-4c3d-b878-440c6b4e90c6",
+          "ServerName": "dsEezDOEpkxecRpJu6l8825JZ8M3rEiMYf4R2OoC8zxBeOnJiL",
+          "CacheServerUrl": "https://artifactcache.actions.githubusercontent.com/dsEezDOEpkxecRpJu6l8825JZ8M3rEiMYf4R2OoC8zxBeOnJiL/"
+        },
+        "name": "SystemVssConnection",
+        "url": "https://pipelines.actions.githubusercontent.com/dsEezDOEpkxecRpJu6l8825JZ8M3rEiMYf4R2OoC8zxBeOnJiL/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": ***
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/main"
+        },
+        {
+          "k": "sha",
+          "v": "1d6b2dc6cf46417db6085c024ccedd9c73ae6a3e"
+        },
+        {
+          "k": "repository",
+          "v": "UsefSalim/deployReactapp"
+        },
+        {
+          "k": "repository_owner",
+          "v": "UsefSalim"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/UsefSalim/deployReactapp.git"
+        },
+        {
+          "k": "run_id",
+          "v": "540684046"
+        },
+        {
+          "k": "run_number",
+          "v": "1"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "actor",
+          "v": "UsefSalim"
+        },
+        {
+          "k": "workflow",
+          "v": "Node.js CI"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "push"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "after",
+                "v": "1d6b2dc6cf46417db6085c024ccedd9c73ae6a3e"
+              },
+              {
+                "k": "base_ref",
+                "v": null
+              },
+              {
+                "k": "before",
+                "v": "fb209ddc6607a35bc5ef7be7a95d447744ef0048"
+              },
+              {
+                "k": "commits",
+                "v": {
+                  "t": 1,
+                  "a": [
+                    {
+                      "t": 2,
+                      "d": [
+                        {
+                          "k": "author",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "salimgithub@gmail.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "youssef salim"
+                              },
+                              {
+                                "k": "username",
+                                "v": "UsefSalim"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "committer",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "noreply@github.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "GitHub"
+                              },
+                              {
+                                "k": "username",
+                                "v": "web-flow"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "distinct",
+                          "v": true
+                        },
+                        {
+                          "k": "id",
+                          "v": "1d6b2dc6cf46417db6085c024ccedd9c73ae6a3e"
+                        },
+                        {
+                          "k": "message",
+                          "v": "Create node.js.yml"
+                        },
+                        {
+                          "k": "timestamp",
+                          "v": "2021-02-05T15:39:12+01:00"
+                        },
+                        {
+                          "k": "tree_id",
+                          "v": "bcf646283d29cfa3254d219698eb91799161e093"
+                        },
+                        {
+                          "k": "url",
+                          "v": "https://github.com/UsefSalim/deployReactapp/commit/1d6b2dc6cf46417db6085c024ccedd9c73ae6a3e"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "compare",
+                "v": "https://github.com/UsefSalim/deployReactapp/compare/fb209ddc6607...1d6b2dc6cf46"
+              },
+              {
+                "k": "created",
+                "v": false
+              },
+              {
+                "k": "deleted",
+                "v": false
+              },
+              {
+                "k": "forced",
+                "v": false
+              },
+              {
+                "k": "head_commit",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "author",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "salimgithub@gmail.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "youssef salim"
+                          },
+                          {
+                            "k": "username",
+                            "v": "UsefSalim"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "committer",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "noreply@github.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "GitHub"
+                          },
+                          {
+                            "k": "username",
+                            "v": "web-flow"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "distinct",
+                      "v": true
+                    },
+                    {
+                      "k": "id",
+                      "v": "1d6b2dc6cf46417db6085c024ccedd9c73ae6a3e"
+                    },
+                    {
+                      "k": "message",
+                      "v": "Create node.js.yml"
+                    },
+                    {
+                      "k": "timestamp",
+                      "v": "2021-02-05T15:39:12+01:00"
+                    },
+                    {
+                      "k": "tree_id",
+                      "v": "bcf646283d29cfa3254d219698eb91799161e093"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/UsefSalim/deployReactapp/commit/1d6b2dc6cf46417db6085c024ccedd9c73ae6a3e"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "pusher",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "email",
+                      "v": "salimgithub@gmail.com"
+                    },
+                    {
+                      "k": "name",
+                      "v": "UsefSalim"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/main"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/UsefSalim/deployReactapp.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": 1612535324.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": null
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "UsefSalim/deployReactapp"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/UsefSalim/deployReactapp.git"
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/UsefSalim/deployReactapp"
+                    },
+                    {
+                      "k": "id",
+                      "v": 336294979.0
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "JavaScript"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "key",
+                            "v": "mit"
+                          },
+                          {
+                            "k": "name",
+                            "v": "MIT License"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "MDc6TGljZW5zZTEz"
+                          },
+                          {
+                            "k": "spdx_id",
+                            "v": "MIT"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/licenses/mit"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "master_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "deployReactapp"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "MDEwOlJlcG9zaXRvcnkzMzYyOTQ5Nzk="
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/76592466?v=4"
+                          },
+                          {
+                            "k": "email",
+                            "v": "salimgithub@gmail.com"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/UsefSalim/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/UsefSalim/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/UsefSalim/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/UsefSalim/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/UsefSalim"
+                          },
+                          {
+                            "k": "id",
+                            "v": 76592466.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "UsefSalim"
+                          },
+                          {
+                            "k": "name",
+                            "v": "UsefSalim"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "MDQ6VXNlcjc2NTkyNDY2"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/UsefSalim/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/UsefSalim/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/UsefSalim/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/UsefSalim/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/UsefSalim/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/UsefSalim"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": 1612535952.0
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:UsefSalim/deployReactapp.git"
+                    },
+                    {
+                      "k": "stargazers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/UsefSalim/deployReactapp"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/teams"
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/UsefSalim/deployReactapp/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2021-02-05T14:35:05Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/UsefSalim/deployReactapp"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/76592466?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/UsefSalim/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/UsefSalim/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/UsefSalim/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/UsefSalim/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/UsefSalim"
+                    },
+                    {
+                      "k": "id",
+                      "v": 76592466.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "UsefSalim"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "MDQ6VXNlcjc2NTkyNDY2"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/UsefSalim/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/UsefSalim/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/UsefSalim/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/UsefSalim/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/UsefSalim/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/UsefSalim"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        }
+      ]
+    },
+    "needs": {
+      "t": 2
+    },
+    "matrix": {
+      "t": 2,
+      "d": [
+        {
+          "k": "node-version",
+          "v": "14.x"
+        }
+      ]
+    },
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 2.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 2.0
+        }
+      ]
+    }
+  }
+}
+[2021-02-05 15:02:58Z INFO JobRunner] Job ID 006c7e6f-00a1-57ff-4d9c-5871960fc9e4
+[2021-02-05 15:02:58Z INFO JobRunner] Creating job server with URL: https://pipelines.actions.githubusercontent.com/dsEezDOEpkxecRpJu6l8825JZ8M3rEiMYf4R2OoC8zxBeOnJiL/
+[2021-02-05 15:02:59Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2021-02-05 15:02:59Z INFO Worker] Listening for cancel message from the channel.
+[2021-02-05 15:02:59Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2021-02-05 15:03:00Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2021-02-05 15:03:00Z INFO JobServerQueue] Start process web console line queue.
+[2021-02-05 15:03:00Z INFO JobServerQueue] Start process file upload queue.
+[2021-02-05 15:03:00Z INFO JobServerQueue] Start process timeline update queue.
+[2021-02-05 15:03:00Z INFO ExecutionContext] Initialize GitHub context
+[2021-02-05 15:03:00Z INFO ExecutionContext] Initialize Env context
+[2021-02-05 15:03:00Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin\Runner.Worker.dll
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:00Z INFO ConfigurationStore] binPath: C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:00Z INFO ConfigurationStore] RootFolder: C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:00Z INFO HostContext] Well known config file 'Runner': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.runner'
+[2021-02-05 15:03:00Z INFO ConfigurationStore] ConfigFilePath: C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.runner
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:00Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.credentials'
+[2021-02-05 15:03:00Z INFO ConfigurationStore] CredFilePath: C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.credentials
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:00Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.credentials_migrated'
+[2021-02-05 15:03:00Z INFO ConfigurationStore] MigratedCredFilePath: C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.credentials_migrated
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:00Z INFO HostContext] Well known config file 'Service': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.service'
+[2021-02-05 15:03:00Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.service
+[2021-02-05 15:03:00Z INFO ConfigurationStore] Read setting file: 296 chars
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_diag'
+[2021-02-05 15:03:00Z INFO JobRunner] Starting the job execution context.
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:00Z INFO JobRunner] Validating directory permissions for: 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Tools': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_tool'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp'
+[2021-02-05 15:03:00Z INFO JobRunner] Getting job extension.
+[2021-02-05 15:03:00Z INFO JobRunner] Initialize job. Getting all job steps.
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_diag'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:00Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.credentials'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:00Z INFO HostContext] Well known config file 'SetupInfo': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.setup_info'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:00Z INFO PipelineDirectoryManager] Loading tracking config if exists: C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_PipelineMapping\UsefSalim/deployReactapp\PipelineFolder.json
+[2021-02-05 15:03:00Z INFO PipelineDirectoryManager] Updating job run properties.
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:00Z INFO JobExtension] Downloading actions
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:00Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:03:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:01Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:03:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:01Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:03:01Z INFO ActionManager] Save archive 'https://api.github.com/repos/actions/checkout/zipball/5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f' into C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions\_temp_47a84baf-7dcf-496b-8132-1cb8bdf218c6\0e956d67-e8a2-44ce-8f52-3d3e480c6f65.zip.
+[2021-02-05 15:03:01Z INFO JobServerQueue] Try to append 1 batches web console lines for record '556b971d-2c40-4dd7-b250-de3a12fbda59', success rate: 1/1.
+[2021-02-05 15:03:01Z INFO JobServerQueue] Try to append 1 batches web console lines for record '556b971d-2c40-4dd7-b250-de3a12fbda59', success rate: 1/1.
+[2021-02-05 15:03:06Z INFO ActionManager] Finished getting action repository.
+[2021-02-05 15:03:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:06Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:06Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:03:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:06Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:06Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:03:06Z INFO ActionManager] Save archive 'https://api.github.com/repos/actions/setup-node/zipball/56899e050abffc08c2b3b61f3ec6a79a9dc3223d' into C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions\_temp_7eb639c4-f58c-46f0-966f-e0ef09475989\a0231257-7a69-46ed-abfe-486971aa8e2a.zip.
+[2021-02-05 15:03:06Z INFO JobServerQueue] Try to append 1 batches web console lines for record '556b971d-2c40-4dd7-b250-de3a12fbda59', success rate: 1/1.
+[2021-02-05 15:03:10Z INFO ActionManager] Finished getting action repository.
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "outputs-attributes",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node12-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "step-env"
+]
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2021-02-05 15:03:10Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:03:10Z INFO ActionManager] Load action that reference repository from 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions\actions\checkout\v2'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2021-02-05 15:03:10Z INFO ActionManager] Action pre node.js file: N/A.
+[2021-02-05 15:03:10Z INFO ActionManager] Action node.js file: dist/index.js.
+[2021-02-05 15:03:10Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Ignore action property author.
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Setup Node.js environment",
+  "description": "Setup a Node.js environment and add it to the PATH, additionally providing proxy support",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 5,
+          "col": 3,
+          "lit": "always-auth"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 7,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 8,
+          "col": 3,
+          "lit": "node-version"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 10,
+          "col": 14,
+          "lit": "10.x"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 11,
+          "col": 3,
+          "lit": "registry-url"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 13,
+          "col": 3,
+          "lit": "scope"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 16,
+          "col": 3,
+          "lit": "version"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": false,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": null,
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": {
+    "version": "The version property will not be supported after October 1, 2019. Use node-version instead"
+  }
+}
+[2021-02-05 15:03:10Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:03:10Z INFO ActionManager] Load action that reference repository from 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions\actions\setup-node\v1'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Ignore action property author.
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Setup Node.js environment",
+  "description": "Setup a Node.js environment and add it to the PATH, additionally providing proxy support",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 5,
+          "col": 3,
+          "lit": "always-auth"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 7,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 8,
+          "col": 3,
+          "lit": "node-version"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 10,
+          "col": 14,
+          "lit": "10.x"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 11,
+          "col": 3,
+          "lit": "registry-url"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 13,
+          "col": 3,
+          "lit": "scope"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 16,
+          "col": 3,
+          "lit": "version"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": false,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": null,
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": {
+    "version": "The version property will not be supported after October 1, 2019. Use node-version instead"
+  }
+}
+[2021-02-05 15:03:10Z INFO ActionManager] Action pre node.js file: N/A.
+[2021-02-05 15:03:10Z INFO ActionManager] Action node.js file: dist/index.js.
+[2021-02-05 15:03:10Z INFO ActionManager] Action post node.js file: N/A.
+[2021-02-05 15:03:10Z INFO JobExtension] Adding .
+[2021-02-05 15:03:10Z INFO JobExtension] Adding .
+[2021-02-05 15:03:10Z INFO JobExtension] Adding .
+[2021-02-05 15:03:10Z INFO JobExtension] Adding .
+[2021-02-05 15:03:10Z INFO JobExtension] Adding .
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_diag'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_diag'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_diag'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_diag'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_diag'
+[2021-02-05 15:03:10Z INFO JobExtension] Total accessible running process: 288.
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:10Z INFO JobRunner] Total job steps: 5.
+[2021-02-05 15:03:10Z INFO JobRunner] Run all job steps.
+[2021-02-05 15:03:10Z INFO StepsRunner] Processing step: DisplayName='Run actions/checkout@v2'
+[2021-02-05 15:03:10Z INFO StepsRunner] Initialize Env context for step
+[2021-02-05 15:03:10Z INFO StepsRunner] Evaluating: success()
+[2021-02-05 15:03:10Z INFO StepsRunner] Result: true
+[2021-02-05 15:03:10Z INFO StepsRunner] Starting the step.
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:10Z INFO StepsRunner] Which: 'chcp'
+[2021-02-05 15:03:10Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper] Starting process:
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper] Process started with process id 34440, waiting for process exit.
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper] Finished process 34440 with exit code 0, and elapsed time 00:00:00.0467716.
+[2021-02-05 15:03:10Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:03:10Z INFO ActionManager] Load action that reference repository from 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions\actions\checkout\v2'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2021-02-05 15:03:10Z INFO ActionManager] Action pre node.js file: N/A.
+[2021-02-05 15:03:10Z INFO ActionManager] Action node.js file: dist/index.js.
+[2021-02-05 15:03:10Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2021-02-05 15:03:10Z INFO ExecutionContext] Reserve record order 7 to 12 for post job actions.
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_diag'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp'
+[2021-02-05 15:03:10Z INFO ActionRunner] Write event payload to C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp\_github_workflow\event.json
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp'
+[2021-02-05 15:03:10Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2021-02-05 15:03:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2021-02-05 15:03:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "UsefSalim/deployReactapp"
+}
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 58,
+  "col": 14,
+  "lit": "1"
+}
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 61,
+  "col": 14,
+  "lit": "false"
+}
+[2021-02-05 15:03:10Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 70,
+  "col": 14,
+  "lit": "false"
+}
+[2021-02-05 15:03:10Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2021-02-05 15:03:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2021-02-05 15:03:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2021-02-05 15:03:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2021-02-05 15:03:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2021-02-05 15:03:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2021-02-05 15:03:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2021-02-05 15:03:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2021-02-05 15:03:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2021-02-05 15:03:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2021-02-05 15:03:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2021-02-05 15:03:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2021-02-05 15:03:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2021-02-05 15:03:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2021-02-05 15:03:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2021-02-05 15:03:10Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2021-02-05 15:03:10Z INFO ActionCommandManager] Register action command extension for command set-env
+[2021-02-05 15:03:10Z INFO ActionCommandManager] Register action command extension for command set-output
+[2021-02-05 15:03:10Z INFO ActionCommandManager] Register action command extension for command save-state
+[2021-02-05 15:03:10Z INFO ActionCommandManager] Register action command extension for command add-path
+[2021-02-05 15:03:10Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2021-02-05 15:03:10Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2021-02-05 15:03:10Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2021-02-05 15:03:10Z INFO ActionCommandManager] Register action command extension for command warning
+[2021-02-05 15:03:10Z INFO ActionCommandManager] Register action command extension for command error
+[2021-02-05 15:03:10Z INFO ActionCommandManager] Register action command extension for command debug
+[2021-02-05 15:03:10Z INFO ActionCommandManager] Register action command extension for command group
+[2021-02-05 15:03:10Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2021-02-05 15:03:10Z INFO ActionCommandManager] Register action command extension for command echo
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:10Z INFO HostContext] Well known directory 'Externals': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\externals'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper] Starting process:
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\externals\node12\bin\node.exe'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions\actions\checkout\v2\dist/index.js"'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\deployReactapp\deployReactapp'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-02-05 15:03:10Z INFO ProcessInvokerWrapper] Process started with process id 30888, waiting for process exit.
+[2021-02-05 15:03:11Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2ad33848-49ea-50c8-ba3c-6d56baf65020', success rate: 1/1.
+[2021-02-05 15:03:12Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2021-02-05 15:03:16Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2ad33848-49ea-50c8-ba3c-6d56baf65020', success rate: 1/1.
+[2021-02-05 15:03:16Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2ad33848-49ea-50c8-ba3c-6d56baf65020', success rate: 1/1.
+[2021-02-05 15:03:17Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2ad33848-49ea-50c8-ba3c-6d56baf65020', success rate: 1/1.
+[2021-02-05 15:03:18Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2ad33848-49ea-50c8-ba3c-6d56baf65020', success rate: 1/1.
+[2021-02-05 15:03:20Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:20Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:20Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:30Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:30Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:30Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:35Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2ad33848-49ea-50c8-ba3c-6d56baf65020', success rate: 1/1.
+[2021-02-05 15:03:35Z INFO AddMaskCommandExtension] Add new secret mask with length of 80
+[2021-02-05 15:03:36Z INFO JobServerQueue] Try to append 6 batches web console lines for record '2ad33848-49ea-50c8-ba3c-6d56baf65020', success rate: 6/6.
+[2021-02-05 15:03:38Z INFO JobServerQueue] Try to append 6 batches web console lines for record '2ad33848-49ea-50c8-ba3c-6d56baf65020', success rate: 6/6.
+[2021-02-05 15:03:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2ad33848-49ea-50c8-ba3c-6d56baf65020', success rate: 1/1.
+[2021-02-05 15:03:39Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2ad33848-49ea-50c8-ba3c-6d56baf65020', success rate: 1/1.
+[2021-02-05 15:03:40Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2ad33848-49ea-50c8-ba3c-6d56baf65020', success rate: 1/1.
+[2021-02-05 15:03:40Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2ad33848-49ea-50c8-ba3c-6d56baf65020', success rate: 1/1.
+[2021-02-05 15:03:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:03:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:03:40Z INFO ProcessInvokerWrapper] Finished process 30888 with exit code 0, and elapsed time 00:00:29.9718324.
+[2021-02-05 15:03:40Z INFO StepsRunner] Step result: 
+[2021-02-05 15:03:40Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2021-02-05 15:03:40Z INFO StepsRunner] Current state: job state = ''
+[2021-02-05 15:03:40Z INFO StepsRunner] Processing step: DisplayName='Use Node.js 14.x'
+[2021-02-05 15:03:40Z INFO StepsRunner] Initialize Env context for step
+[2021-02-05 15:03:40Z INFO StepsRunner] Evaluating: success()
+[2021-02-05 15:03:40Z INFO StepsRunner] Result: true
+[2021-02-05 15:03:40Z INFO StepsRunner] Starting the step.
+[2021-02-05 15:03:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:40Z INFO StepsRunner] Which: 'chcp'
+[2021-02-05 15:03:40Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2021-02-05 15:03:40Z INFO ProcessInvokerWrapper] Starting process:
+[2021-02-05 15:03:40Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2021-02-05 15:03:40Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2021-02-05 15:03:40Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:40Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-02-05 15:03:40Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-02-05 15:03:40Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-02-05 15:03:40Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-02-05 15:03:40Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-02-05 15:03:40Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-02-05 15:03:40Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-02-05 15:03:40Z INFO ProcessInvokerWrapper] Process started with process id 6252, waiting for process exit.
+[2021-02-05 15:03:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:03:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:03:40Z INFO ProcessInvokerWrapper] Finished process 6252 with exit code 0, and elapsed time 00:00:00.0258343.
+[2021-02-05 15:03:40Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:03:41Z INFO ActionManager] Load action that reference repository from 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions\actions\setup-node\v1'
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:03:41Z INFO ActionManifestManager] Ignore action property author.
+[2021-02-05 15:03:41Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Setup Node.js environment",
+  "description": "Setup a Node.js environment and add it to the PATH, additionally providing proxy support",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 5,
+          "col": 3,
+          "lit": "always-auth"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 7,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 8,
+          "col": 3,
+          "lit": "node-version"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 10,
+          "col": 14,
+          "lit": "10.x"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 11,
+          "col": 3,
+          "lit": "registry-url"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 13,
+          "col": 3,
+          "lit": "scope"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 16,
+          "col": 3,
+          "lit": "version"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": false,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": null,
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": {
+    "version": "The version property will not be supported after October 1, 2019. Use node-version instead"
+  }
+}
+[2021-02-05 15:03:41Z INFO ActionManager] Action pre node.js file: N/A.
+[2021-02-05 15:03:41Z INFO ActionManager] Action node.js file: dist/index.js.
+[2021-02-05 15:03:41Z INFO ActionManager] Action post node.js file: N/A.
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp'
+[2021-02-05 15:03:41Z INFO ActionRunner] Write event payload to C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp\_github_workflow\event.json
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp'
+[2021-02-05 15:03:41Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2021-02-05 15:03:41Z INFO ActionManifestManager] Input 'always-auth': default value evaluate result: {
+  "type": 0,
+  "file": 3,
+  "line": 7,
+  "col": 14,
+  "lit": "false"
+}
+[2021-02-05 15:03:41Z INFO ActionManifestManager] Input 'registry-url': default value evaluate result: ""
+[2021-02-05 15:03:41Z INFO ActionManifestManager] Input 'scope': default value evaluate result: ""
+[2021-02-05 15:03:41Z INFO ActionManifestManager] Input 'version': default value evaluate result: ""
+[2021-02-05 15:03:41Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2021-02-05 15:03:41Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2021-02-05 15:03:41Z INFO ActionCommandManager] Register action command extension for command set-env
+[2021-02-05 15:03:41Z INFO ActionCommandManager] Register action command extension for command set-output
+[2021-02-05 15:03:41Z INFO ActionCommandManager] Register action command extension for command save-state
+[2021-02-05 15:03:41Z INFO ActionCommandManager] Register action command extension for command add-path
+[2021-02-05 15:03:41Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2021-02-05 15:03:41Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2021-02-05 15:03:41Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2021-02-05 15:03:41Z INFO ActionCommandManager] Register action command extension for command warning
+[2021-02-05 15:03:41Z INFO ActionCommandManager] Register action command extension for command error
+[2021-02-05 15:03:41Z INFO ActionCommandManager] Register action command extension for command debug
+[2021-02-05 15:03:41Z INFO ActionCommandManager] Register action command extension for command group
+[2021-02-05 15:03:41Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2021-02-05 15:03:41Z INFO ActionCommandManager] Register action command extension for command echo
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:41Z INFO HostContext] Well known directory 'Externals': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\externals'
+[2021-02-05 15:03:41Z INFO ProcessInvokerWrapper] Starting process:
+[2021-02-05 15:03:41Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\externals\node12\bin\node.exe'
+[2021-02-05 15:03:41Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions\actions\setup-node\v1\dist/index.js"'
+[2021-02-05 15:03:41Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\deployReactapp\deployReactapp'
+[2021-02-05 15:03:41Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-02-05 15:03:41Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2021-02-05 15:03:41Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-02-05 15:03:41Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-02-05 15:03:41Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-02-05 15:03:41Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-02-05 15:03:41Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-02-05 15:03:41Z INFO ProcessInvokerWrapper] Process started with process id 36744, waiting for process exit.
+[2021-02-05 15:03:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2ad33848-49ea-50c8-ba3c-6d56baf65020', success rate: 1/1.
+[2021-02-05 15:03:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6e18ae3a-0002-5382-d895-85ba37ca0ed3', success rate: 1/1.
+[2021-02-05 15:03:42Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2021-02-05 15:03:50Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:03:50Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:03:50Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:04:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:04:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:04:00Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:04:08Z INFO JobServerQueue] Stop aggressive process web console line queue.
+[2021-02-05 15:04:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:04:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:04:10Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:04:20Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:04:20Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:04:20Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:04:30Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:04:30Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:04:30Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:04:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:04:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:04:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:04:50Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:04:50Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:04:50Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:05:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:05:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:05:00Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:05:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:05:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:05:10Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:05:20Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:05:20Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:05:20Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:05:30Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:05:30Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:05:30Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:05:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:05:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:05:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:05:50Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:05:50Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:05:50Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:06:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:06:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:06:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:06:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:06:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:06:11Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:06:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:06:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:06:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:06:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:06:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:06:31Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:06:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:06:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:06:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:06:51Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:06:51Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:06:51Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:06:56Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6e18ae3a-0002-5382-d895-85ba37ca0ed3', success rate: 1/1.
+[2021-02-05 15:06:57Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6e18ae3a-0002-5382-d895-85ba37ca0ed3', success rate: 1/1.
+[2021-02-05 15:07:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:07:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:07:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper] Finished process 36744 with exit code 0, and elapsed time 00:03:24.0736589.
+[2021-02-05 15:07:05Z INFO StepsRunner] Step result: 
+[2021-02-05 15:07:05Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2021-02-05 15:07:05Z INFO StepsRunner] Current state: job state = ''
+[2021-02-05 15:07:05Z INFO StepsRunner] Processing step: DisplayName='Run npm i'
+[2021-02-05 15:07:05Z INFO StepsRunner] Initialize Env context for step
+[2021-02-05 15:07:05Z INFO StepsRunner] Evaluating: success()
+[2021-02-05 15:07:05Z INFO StepsRunner] Result: true
+[2021-02-05 15:07:05Z INFO StepsRunner] Starting the step.
+[2021-02-05 15:07:05Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:07:05Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:07:05Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:07:05Z INFO StepsRunner] Which: 'chcp'
+[2021-02-05 15:07:05Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper] Starting process:
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper] Process started with process id 18272, waiting for process exit.
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper] Finished process 18272 with exit code 0, and elapsed time 00:00:00.0413684.
+[2021-02-05 15:07:05Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2021-02-05 15:07:05Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:07:05Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:07:05Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:07:05Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp'
+[2021-02-05 15:07:05Z INFO ActionRunner] Write event payload to C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp\_github_workflow\event.json
+[2021-02-05 15:07:05Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:07:05Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:07:05Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:07:05Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp'
+[2021-02-05 15:07:05Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2021-02-05 15:07:05Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2021-02-05 15:07:05Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2021-02-05 15:07:05Z INFO ActionCommandManager] Register action command extension for command set-env
+[2021-02-05 15:07:05Z INFO ActionCommandManager] Register action command extension for command set-output
+[2021-02-05 15:07:05Z INFO ActionCommandManager] Register action command extension for command save-state
+[2021-02-05 15:07:05Z INFO ActionCommandManager] Register action command extension for command add-path
+[2021-02-05 15:07:05Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2021-02-05 15:07:05Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2021-02-05 15:07:05Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2021-02-05 15:07:05Z INFO ActionCommandManager] Register action command extension for command warning
+[2021-02-05 15:07:05Z INFO ActionCommandManager] Register action command extension for command error
+[2021-02-05 15:07:05Z INFO ActionCommandManager] Register action command extension for command debug
+[2021-02-05 15:07:05Z INFO ActionCommandManager] Register action command extension for command group
+[2021-02-05 15:07:05Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2021-02-05 15:07:05Z INFO ActionCommandManager] Register action command extension for command echo
+[2021-02-05 15:07:05Z INFO ScriptHandler] Which: 'pwsh'
+[2021-02-05 15:07:05Z INFO ScriptHandler] Not found.
+[2021-02-05 15:07:05Z INFO ScriptHandler] Defaulting to powershell
+[2021-02-05 15:07:05Z INFO ScriptHandler] Which: 'powershell'
+[2021-02-05 15:07:05Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2021-02-05 15:07:05Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:07:05Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:07:05Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:07:05Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp'
+[2021-02-05 15:07:05Z INFO ScriptHandler] Which: 'pwsh'
+[2021-02-05 15:07:05Z INFO ScriptHandler] Not found.
+[2021-02-05 15:07:05Z INFO ScriptHandler] Defaulting to powershell
+[2021-02-05 15:07:05Z INFO ScriptHandler] Which: 'powershell'
+[2021-02-05 15:07:05Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2021-02-05 15:07:05Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6e18ae3a-0002-5382-d895-85ba37ca0ed3', success rate: 1/1.
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper] Starting process:
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp\73f960e9-a19c-4c56-8d62-939bb42efd6f.ps1'"'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\deployReactapp\deployReactapp'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-02-05 15:07:05Z INFO ProcessInvokerWrapper] Process started with process id 22588, waiting for process exit.
+[2021-02-05 15:07:06Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6df6c8b2-37e7-567b-dfd0-96a16ebefadf', success rate: 1/1.
+[2021-02-05 15:07:07Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2021-02-05 15:07:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:07:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:07:11Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:07:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:07:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:07:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:07:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:07:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:07:31Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:07:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:07:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:07:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:07:51Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:07:51Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:07:51Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:08:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:08:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:08:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:08:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:08:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:08:11Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:08:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:08:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:08:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:08:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:08:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:08:31Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:08:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:08:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:08:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:08:51Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:08:51Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:08:51Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:08:56Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6df6c8b2-37e7-567b-dfd0-96a16ebefadf', success rate: 1/1.
+[2021-02-05 15:09:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:09:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:09:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:09:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:09:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:09:11Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:09:12Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6df6c8b2-37e7-567b-dfd0-96a16ebefadf', success rate: 1/1.
+[2021-02-05 15:09:16Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6df6c8b2-37e7-567b-dfd0-96a16ebefadf', success rate: 1/1.
+[2021-02-05 15:09:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:09:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:09:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:09:27Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6df6c8b2-37e7-567b-dfd0-96a16ebefadf', success rate: 1/1.
+[2021-02-05 15:09:29Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6df6c8b2-37e7-567b-dfd0-96a16ebefadf', success rate: 1/1.
+[2021-02-05 15:09:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:09:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:09:31Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:09:33Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6df6c8b2-37e7-567b-dfd0-96a16ebefadf', success rate: 1/1.
+[2021-02-05 15:09:37Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6df6c8b2-37e7-567b-dfd0-96a16ebefadf', success rate: 1/1.
+[2021-02-05 15:09:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6df6c8b2-37e7-567b-dfd0-96a16ebefadf', success rate: 1/1.
+[2021-02-05 15:09:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6df6c8b2-37e7-567b-dfd0-96a16ebefadf', success rate: 1/1.
+[2021-02-05 15:09:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:09:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:09:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:09:51Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:09:51Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:09:51Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:10:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:10:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:10:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:10:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:10:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:10:11Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:10:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:10:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:10:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:10:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:10:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:10:31Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:10:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:10:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:10:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:10:51Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:10:51Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:10:51Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:11:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:11:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:11:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:11:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:11:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:11:11Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:11:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:11:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:11:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:11:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:11:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:11:31Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:11:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:11:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:11:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:11:51Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:11:51Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:11:51Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:12:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:12:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:12:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:12:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:12:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:12:11Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:12:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:12:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:12:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:12:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:12:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:12:31Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:12:35Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6df6c8b2-37e7-567b-dfd0-96a16ebefadf', success rate: 1/1.
+[2021-02-05 15:12:36Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6df6c8b2-37e7-567b-dfd0-96a16ebefadf', success rate: 1/1.
+[2021-02-05 15:12:40Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6df6c8b2-37e7-567b-dfd0-96a16ebefadf', success rate: 1/1.
+[2021-02-05 15:12:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:12:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:12:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:12:42Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6df6c8b2-37e7-567b-dfd0-96a16ebefadf', success rate: 1/1.
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper] Finished process 22588 with exit code 0, and elapsed time 00:05:36.9026870.
+[2021-02-05 15:12:42Z INFO StepsRunner] Step result: 
+[2021-02-05 15:12:42Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2021-02-05 15:12:42Z INFO StepsRunner] Current state: job state = ''
+[2021-02-05 15:12:42Z INFO StepsRunner] Processing step: DisplayName='Run npm run build --if-present'
+[2021-02-05 15:12:42Z INFO StepsRunner] Initialize Env context for step
+[2021-02-05 15:12:42Z INFO StepsRunner] Evaluating: success()
+[2021-02-05 15:12:42Z INFO StepsRunner] Result: true
+[2021-02-05 15:12:42Z INFO StepsRunner] Starting the step.
+[2021-02-05 15:12:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:12:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:12:42Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:12:42Z INFO StepsRunner] Which: 'chcp'
+[2021-02-05 15:12:42Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper] Starting process:
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper] Process started with process id 14056, waiting for process exit.
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper] Finished process 14056 with exit code 0, and elapsed time 00:00:00.0253644.
+[2021-02-05 15:12:42Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2021-02-05 15:12:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:12:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:12:42Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:12:42Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp'
+[2021-02-05 15:12:42Z INFO ActionRunner] Write event payload to C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp\_github_workflow\event.json
+[2021-02-05 15:12:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:12:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:12:42Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:12:42Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp'
+[2021-02-05 15:12:42Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2021-02-05 15:12:42Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2021-02-05 15:12:42Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2021-02-05 15:12:42Z INFO ActionCommandManager] Register action command extension for command set-env
+[2021-02-05 15:12:42Z INFO ActionCommandManager] Register action command extension for command set-output
+[2021-02-05 15:12:42Z INFO ActionCommandManager] Register action command extension for command save-state
+[2021-02-05 15:12:42Z INFO ActionCommandManager] Register action command extension for command add-path
+[2021-02-05 15:12:42Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2021-02-05 15:12:42Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2021-02-05 15:12:42Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2021-02-05 15:12:42Z INFO ActionCommandManager] Register action command extension for command warning
+[2021-02-05 15:12:42Z INFO ActionCommandManager] Register action command extension for command error
+[2021-02-05 15:12:42Z INFO ActionCommandManager] Register action command extension for command debug
+[2021-02-05 15:12:42Z INFO ActionCommandManager] Register action command extension for command group
+[2021-02-05 15:12:42Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2021-02-05 15:12:42Z INFO ActionCommandManager] Register action command extension for command echo
+[2021-02-05 15:12:42Z INFO ScriptHandler] Which: 'pwsh'
+[2021-02-05 15:12:42Z INFO ScriptHandler] Not found.
+[2021-02-05 15:12:42Z INFO ScriptHandler] Defaulting to powershell
+[2021-02-05 15:12:42Z INFO ScriptHandler] Which: 'powershell'
+[2021-02-05 15:12:42Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2021-02-05 15:12:42Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:12:42Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:12:42Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:12:42Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp'
+[2021-02-05 15:12:42Z INFO ScriptHandler] Which: 'pwsh'
+[2021-02-05 15:12:42Z INFO ScriptHandler] Not found.
+[2021-02-05 15:12:42Z INFO ScriptHandler] Defaulting to powershell
+[2021-02-05 15:12:42Z INFO ScriptHandler] Which: 'powershell'
+[2021-02-05 15:12:42Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper] Starting process:
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp\ce356495-a1dc-4dec-8e9d-3eeb02b7d072.ps1'"'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\deployReactapp\deployReactapp'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-02-05 15:12:42Z INFO ProcessInvokerWrapper] Process started with process id 28128, waiting for process exit.
+[2021-02-05 15:12:43Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2091dd97-b57a-59d7-148a-fbbcbde32eec', success rate: 1/1.
+[2021-02-05 15:12:43Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2021-02-05 15:12:51Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:12:51Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:12:51Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:12:53Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2091dd97-b57a-59d7-148a-fbbcbde32eec', success rate: 1/1.
+[2021-02-05 15:13:00Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2091dd97-b57a-59d7-148a-fbbcbde32eec', success rate: 1/1.
+[2021-02-05 15:13:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:13:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:13:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:13:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:13:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:13:11Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper] Finished process 28128 with exit code 0, and elapsed time 00:00:35.0733693.
+[2021-02-05 15:13:17Z INFO StepsRunner] Step result: 
+[2021-02-05 15:13:17Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2021-02-05 15:13:17Z INFO StepsRunner] Current state: job state = ''
+[2021-02-05 15:13:17Z INFO StepsRunner] Processing step: DisplayName='Run npm test'
+[2021-02-05 15:13:17Z INFO StepsRunner] Initialize Env context for step
+[2021-02-05 15:13:17Z INFO StepsRunner] Evaluating: success()
+[2021-02-05 15:13:17Z INFO StepsRunner] Result: true
+[2021-02-05 15:13:17Z INFO StepsRunner] Starting the step.
+[2021-02-05 15:13:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:13:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:13:17Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:13:17Z INFO StepsRunner] Which: 'chcp'
+[2021-02-05 15:13:17Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper] Starting process:
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper] Process started with process id 28912, waiting for process exit.
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper] Finished process 28912 with exit code 0, and elapsed time 00:00:00.0205202.
+[2021-02-05 15:13:17Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2021-02-05 15:13:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:13:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:13:17Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:13:17Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp'
+[2021-02-05 15:13:17Z INFO ActionRunner] Write event payload to C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp\_github_workflow\event.json
+[2021-02-05 15:13:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:13:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:13:17Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:13:17Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp'
+[2021-02-05 15:13:17Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2021-02-05 15:13:17Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2021-02-05 15:13:17Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2021-02-05 15:13:17Z INFO ActionCommandManager] Register action command extension for command set-env
+[2021-02-05 15:13:17Z INFO ActionCommandManager] Register action command extension for command set-output
+[2021-02-05 15:13:17Z INFO ActionCommandManager] Register action command extension for command save-state
+[2021-02-05 15:13:17Z INFO ActionCommandManager] Register action command extension for command add-path
+[2021-02-05 15:13:17Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2021-02-05 15:13:17Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2021-02-05 15:13:17Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2021-02-05 15:13:17Z INFO ActionCommandManager] Register action command extension for command warning
+[2021-02-05 15:13:17Z INFO ActionCommandManager] Register action command extension for command error
+[2021-02-05 15:13:17Z INFO ActionCommandManager] Register action command extension for command debug
+[2021-02-05 15:13:17Z INFO ActionCommandManager] Register action command extension for command group
+[2021-02-05 15:13:17Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2021-02-05 15:13:17Z INFO ActionCommandManager] Register action command extension for command echo
+[2021-02-05 15:13:17Z INFO ScriptHandler] Which: 'pwsh'
+[2021-02-05 15:13:17Z INFO ScriptHandler] Not found.
+[2021-02-05 15:13:17Z INFO ScriptHandler] Defaulting to powershell
+[2021-02-05 15:13:17Z INFO ScriptHandler] Which: 'powershell'
+[2021-02-05 15:13:17Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2091dd97-b57a-59d7-148a-fbbcbde32eec', success rate: 1/1.
+[2021-02-05 15:13:17Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2021-02-05 15:13:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:13:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:13:17Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:13:17Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp'
+[2021-02-05 15:13:17Z INFO ScriptHandler] Which: 'pwsh'
+[2021-02-05 15:13:17Z INFO ScriptHandler] Not found.
+[2021-02-05 15:13:17Z INFO ScriptHandler] Defaulting to powershell
+[2021-02-05 15:13:17Z INFO ScriptHandler] Which: 'powershell'
+[2021-02-05 15:13:17Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper] Starting process:
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp\98131ee4-cfb7-4766-909c-f98465032c07.ps1'"'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\deployReactapp\deployReactapp'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-02-05 15:13:17Z INFO ProcessInvokerWrapper] Process started with process id 4380, waiting for process exit.
+[2021-02-05 15:13:18Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd80f8feb-80b4-51bd-c876-203cada35044', success rate: 1/1.
+[2021-02-05 15:13:18Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2021-02-05 15:13:20Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd80f8feb-80b4-51bd-c876-203cada35044', success rate: 1/1.
+[2021-02-05 15:13:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:13:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:13:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:13:30Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd80f8feb-80b4-51bd-c876-203cada35044', success rate: 1/1.
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper] Finished process 4380 with exit code 0, and elapsed time 00:00:12.8993590.
+[2021-02-05 15:13:30Z INFO StepsRunner] Step result: 
+[2021-02-05 15:13:30Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2021-02-05 15:13:30Z INFO StepsRunner] Current state: job state = ''
+[2021-02-05 15:13:30Z INFO StepsRunner] Processing step: DisplayName='Post Run actions/checkout@v2'
+[2021-02-05 15:13:30Z INFO StepsRunner] Initialize Env context for step
+[2021-02-05 15:13:30Z INFO StepsRunner] Evaluating: always()
+[2021-02-05 15:13:30Z INFO StepsRunner] Result: true
+[2021-02-05 15:13:30Z INFO StepsRunner] Starting the step.
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:13:30Z INFO StepsRunner] Which: 'chcp'
+[2021-02-05 15:13:30Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper] Starting process:
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper] Process started with process id 26512, waiting for process exit.
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper] Finished process 26512 with exit code 0, and elapsed time 00:00:00.0268653.
+[2021-02-05 15:13:30Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:13:30Z INFO ActionManager] Load action that reference repository from 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions\actions\checkout\v2'
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions'
+[2021-02-05 15:13:30Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2021-02-05 15:13:30Z INFO ActionManager] Action pre node.js file: N/A.
+[2021-02-05 15:13:30Z INFO ActionManager] Action node.js file: dist/index.js.
+[2021-02-05 15:13:30Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp'
+[2021-02-05 15:13:30Z INFO ActionRunner] Write event payload to C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp\_github_workflow\event.json
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp'
+[2021-02-05 15:13:30Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2021-02-05 15:13:30Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "UsefSalim/deployReactapp"
+}
+[2021-02-05 15:13:30Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2021-02-05 15:13:30Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2021-02-05 15:13:30Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2021-02-05 15:13:30Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2021-02-05 15:13:30Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2021-02-05 15:13:30Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2021-02-05 15:13:30Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2021-02-05 15:13:30Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2021-02-05 15:13:30Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 58,
+  "col": 14,
+  "lit": "1"
+}
+[2021-02-05 15:13:30Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 61,
+  "col": 14,
+  "lit": "false"
+}
+[2021-02-05 15:13:30Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 70,
+  "col": 14,
+  "lit": "false"
+}
+[2021-02-05 15:13:30Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2021-02-05 15:13:30Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2021-02-05 15:13:30Z INFO ActionCommandManager] Register action command extension for command set-env
+[2021-02-05 15:13:30Z INFO ActionCommandManager] Register action command extension for command set-output
+[2021-02-05 15:13:30Z INFO ActionCommandManager] Register action command extension for command save-state
+[2021-02-05 15:13:30Z INFO ActionCommandManager] Register action command extension for command add-path
+[2021-02-05 15:13:30Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2021-02-05 15:13:30Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2021-02-05 15:13:30Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2021-02-05 15:13:30Z INFO ActionCommandManager] Register action command extension for command warning
+[2021-02-05 15:13:30Z INFO ActionCommandManager] Register action command extension for command error
+[2021-02-05 15:13:30Z INFO ActionCommandManager] Register action command extension for command debug
+[2021-02-05 15:13:30Z INFO ActionCommandManager] Register action command extension for command group
+[2021-02-05 15:13:30Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2021-02-05 15:13:30Z INFO ActionCommandManager] Register action command extension for command echo
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:13:30Z INFO HostContext] Well known directory 'Externals': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\externals'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper] Starting process:
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\externals\node12\bin\node.exe'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_actions\actions\checkout\v2\dist/index.js"'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\deployReactapp\deployReactapp'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-02-05 15:13:30Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-02-05 15:13:31Z INFO JobServerQueue] Try to append 1 batches web console lines for record '729d9cb2-78a2-4279-9ad8-eff349fac9be', success rate: 1/1.
+[2021-02-05 15:13:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:13:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:13:31Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:13:32Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2021-02-05 15:13:32Z INFO ProcessInvokerWrapper] Process started with process id 32364, waiting for process exit.
+[2021-02-05 15:13:39Z INFO AddMaskCommandExtension] Add new secret mask with length of 32
+[2021-02-05 15:13:40Z INFO JobServerQueue] Try to append 1 batches web console lines for record '729d9cb2-78a2-4279-9ad8-eff349fac9be', success rate: 1/1.
+[2021-02-05 15:13:40Z INFO JobServerQueue] Try to append 1 batches web console lines for record '729d9cb2-78a2-4279-9ad8-eff349fac9be', success rate: 1/1.
+[2021-02-05 15:13:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:13:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:13:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work'
+[2021-02-05 15:13:42Z INFO JobServerQueue] Try to append 1 batches web console lines for record '729d9cb2-78a2-4279-9ad8-eff349fac9be', success rate: 1/1.
+[2021-02-05 15:13:43Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:13:43Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-02-05 15:13:43Z INFO ProcessInvokerWrapper] Finished process 32364 with exit code 0, and elapsed time 00:00:12.9956321.
+[2021-02-05 15:13:43Z INFO StepsRunner] Step result: 
+[2021-02-05 15:13:43Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2021-02-05 15:13:43Z INFO StepsRunner] Current state: job state = ''
+[2021-02-05 15:13:43Z INFO JobRunner] Finalize job.
+[2021-02-05 15:13:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:13:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:13:43Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_diag'
+[2021-02-05 15:13:43Z INFO JobExtension] Initialize Env context
+[2021-02-05 15:13:43Z INFO JobExtension] Initialize steps context
+[2021-02-05 15:13:43Z INFO JobExtension] Total accessible running process: 290.
+[2021-02-05 15:13:43Z INFO JobExtension] Inspecting process environment variables. PID: 13772 (audiodg)
+[2021-02-05 15:13:43Z WARN JobExtension] Ignore exception during read process environment variables: Accès refusé.
+[2021-02-05 15:13:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record '0ecd5419-dc81-4efd-8dda-b1353147aec9', success rate: 1/1.
+[2021-02-05 15:13:44Z INFO JobExtension] Inspecting process environment variables. PID: 6116 (conhost)
+[2021-02-05 15:13:44Z INFO JobExtension] Inspecting process environment variables. PID: 21596 (powershell)
+[2021-02-05 15:13:44Z INFO JobExtension] Inspecting process environment variables. PID: 30064 (chrome)
+[2021-02-05 15:13:44Z INFO JobExtension] Inspecting process environment variables. PID: 12104 (chrome)
+[2021-02-05 15:13:44Z INFO JobExtension] Inspecting process environment variables. PID: 24504 (WmiPrvSE)
+[2021-02-05 15:13:44Z WARN JobExtension] Ignore exception during read process environment variables: Accès refusé.
+[2021-02-05 15:13:44Z INFO JobExtension] Inspecting process environment variables. PID: 6236 (chrome)
+[2021-02-05 15:13:44Z INFO JobExtension] Inspecting process environment variables. PID: 21784 (chrome)
+[2021-02-05 15:13:44Z INFO JobExtension] Inspecting process environment variables. PID: 29916 (chrome)
+[2021-02-05 15:13:44Z INFO JobExtension] Inspecting process environment variables. PID: 32416 (chrome)
+[2021-02-05 15:13:44Z INFO JobExtension] Inspecting process environment variables. PID: 12112 (chrome)
+[2021-02-05 15:13:44Z INFO JobExtension] Inspecting process environment variables. PID: 8752 (chrome)
+[2021-02-05 15:13:44Z INFO JobRunner] Job result after all job steps finish: Succeeded
+[2021-02-05 15:13:44Z INFO JobRunner] Completing the job execution context.
+[2021-02-05 15:13:44Z INFO JobRunner] Shutting down the job server queue.
+[2021-02-05 15:13:44Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2021-02-05 15:13:45Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2021-02-05 15:13:47Z INFO JobServerQueue] All queue process task stopped.
+[2021-02-05 15:13:47Z INFO JobServerQueue] Web console line queue drained.
+[2021-02-05 15:13:47Z INFO JobServerQueue] Uploading 2 files in one shot.
+[2021-02-05 15:13:48Z INFO JobServerQueue] Try to upload 2 log files or attachments, success rate: 2/2.
+[2021-02-05 15:13:48Z INFO JobServerQueue] File upload queue drained.
+[2021-02-05 15:13:51Z INFO JobServerQueue] Timeline update queue drained.
+[2021-02-05 15:13:51Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2021-02-05 15:13:51Z INFO TempDirectoryManager] Cleaning runner temp folder: C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\_work\_temp
+[2021-02-05 15:13:52Z INFO JobRunner] Raising job completed event.
+[2021-02-05 15:13:53Z INFO Worker] Job completed.

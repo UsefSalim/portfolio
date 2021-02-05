@@ -1,0 +1,126 @@
+[2021-02-05 15:19:32Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2021-02-05 15:19:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:19:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:19:32Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.credentials'
+[2021-02-05 15:19:33Z INFO Listener] Runner is built for Windows (X64) - win-x64.
+[2021-02-05 15:19:33Z INFO Listener] RuntimeInformation: Microsoft Windows 10.0.19042.
+[2021-02-05 15:19:33Z INFO Listener] Version: 2.276.1
+[2021-02-05 15:19:33Z INFO Listener] Commit: 5effa808be96eae7f2e08d713426b8d056bddff1
+[2021-02-05 15:19:33Z INFO Listener] Culture: fr-FR
+[2021-02-05 15:19:33Z INFO Listener] UI Culture: fr-FR
+[2021-02-05 15:19:33Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:19:33Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:19:33Z INFO Listener] Validating directory permissions for: 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:19:33Z INFO CommandLineParser] Parse
+[2021-02-05 15:19:33Z INFO CommandLineParser] Parsing 1 args
+[2021-02-05 15:19:33Z INFO CommandLineParser] parsing argument
+[2021-02-05 15:19:33Z INFO CommandLineParser] HasArgs: False
+[2021-02-05 15:19:33Z INFO CommandLineParser] Adding Command: run
+[2021-02-05 15:19:33Z INFO Listener] Arguments parsed
+[2021-02-05 15:19:33Z INFO Runner] ExecuteCommand
+[2021-02-05 15:19:33Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin\Runner.Listener.dll
+[2021-02-05 15:19:33Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:19:33Z INFO ConfigurationStore] binPath: C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin
+[2021-02-05 15:19:33Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:19:33Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:19:33Z INFO ConfigurationStore] RootFolder: C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner
+[2021-02-05 15:19:33Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:19:33Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:19:33Z INFO HostContext] Well known config file 'Runner': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.runner'
+[2021-02-05 15:19:33Z INFO ConfigurationStore] ConfigFilePath: C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.runner
+[2021-02-05 15:19:33Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:19:33Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:19:33Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.credentials'
+[2021-02-05 15:19:33Z INFO ConfigurationStore] CredFilePath: C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.credentials
+[2021-02-05 15:19:33Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:19:33Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:19:33Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.credentials_migrated'
+[2021-02-05 15:19:33Z INFO ConfigurationStore] MigratedCredFilePath: C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.credentials_migrated
+[2021-02-05 15:19:33Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:19:33Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:19:33Z INFO HostContext] Well known config file 'Service': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.service'
+[2021-02-05 15:19:33Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.service
+[2021-02-05 15:19:33Z INFO CommandSettings] Flag 'help': 'False'
+[2021-02-05 15:19:33Z INFO CommandSettings] Flag 'version': 'False'
+[2021-02-05 15:19:33Z INFO CommandSettings] Flag 'commit': 'False'
+[2021-02-05 15:19:33Z INFO CommandSettings] Flag 'check': 'False'
+[2021-02-05 15:19:33Z INFO CommandSettings] Command 'configure': 'False'
+[2021-02-05 15:19:33Z INFO CommandSettings] Command 'remove': 'False'
+[2021-02-05 15:19:33Z INFO CommandSettings] Command 'warmup': 'False'
+[2021-02-05 15:19:33Z INFO ConfigurationManager] LoadSettings
+[2021-02-05 15:19:33Z INFO ConfigurationStore] IsConfigured()
+[2021-02-05 15:19:33Z INFO ConfigurationStore] IsConfigured: True
+[2021-02-05 15:19:33Z INFO ConfigurationManager] Is configured: True
+[2021-02-05 15:19:33Z INFO ConfigurationStore] Read setting file: 296 chars
+[2021-02-05 15:19:33Z INFO ConfigurationManager] Settings Loaded
+[2021-02-05 15:19:33Z INFO ConfigurationStore] IsServiceConfigured()
+[2021-02-05 15:19:33Z INFO ConfigurationStore] IsServiceConfigured: False
+[2021-02-05 15:19:33Z INFO CommandSettings] Command 'run': 'True'
+[2021-02-05 15:19:33Z INFO ConfigurationStore] IsConfigured()
+[2021-02-05 15:19:33Z INFO ConfigurationStore] IsConfigured: True
+[2021-02-05 15:19:33Z INFO ConfigurationManager] Is configured: True
+[2021-02-05 15:19:33Z INFO Runner] Could not parse the argument value '' for StartupType. Defaulting to Manual
+[2021-02-05 15:19:33Z INFO Runner] Set runner startup type - Manual
+[2021-02-05 15:19:33Z INFO CommandSettings] Flag 'once': 'False'
+[2021-02-05 15:19:33Z INFO Runner] RunAsync
+[2021-02-05 15:19:33Z INFO ConfigurationManager] LoadSettings
+[2021-02-05 15:19:33Z INFO ConfigurationStore] IsConfigured()
+[2021-02-05 15:19:33Z INFO ConfigurationStore] IsConfigured: True
+[2021-02-05 15:19:33Z INFO ConfigurationManager] Is configured: True
+[2021-02-05 15:19:33Z INFO ConfigurationManager] Settings Loaded
+[2021-02-05 15:19:33Z INFO MessageListener] {
+  "AgentId": 2,
+  "AgentName": "YOUSSEF",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelines.actions.githubusercontent.com/dsEezDOEpkxecRpJu6l8825JZ8M3rEiMYf4R2OoC8zxBeOnJiL",
+  "GitHubUrl": "https://github.com/UsefSalim/deployReactapp",
+  "WorkFolder": "_work"
+}
+[2021-02-05 15:19:33Z INFO MessageListener] Loading Credentials
+[2021-02-05 15:19:33Z INFO ConfigurationStore] HasCredentials()
+[2021-02-05 15:19:33Z INFO ConfigurationStore] stored True
+[2021-02-05 15:19:33Z INFO CredentialManager] GetCredentialProvider
+[2021-02-05 15:19:33Z INFO CredentialManager] Creating type OAuth
+[2021-02-05 15:19:33Z INFO CredentialManager] Creating credential type: OAuth
+[2021-02-05 15:19:33Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\bin'
+[2021-02-05 15:19:33Z INFO HostContext] Well known directory 'Root': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner'
+[2021-02-05 15:19:33Z INFO HostContext] Well known config file 'RSACredentials': 'C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.credentials_rsaparams'
+[2021-02-05 15:19:33Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.credentials_rsaparams
+[2021-02-05 15:19:33Z INFO MessageListener] Attempt to create session.
+[2021-02-05 15:19:33Z INFO MessageListener] Connecting to the Runner Server...
+[2021-02-05 15:19:33Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2021-02-05 15:19:33Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2021-02-05 15:19:33Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2021-02-05 15:19:33Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2021-02-05 15:19:33Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2021-02-05 15:19:33Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2021-02-05 15:19:34Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2021-02-05 15:19:34Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2021-02-05 15:19:36Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2021-02-05 15:19:36Z INFO MessageListener] VssConnection created
+[2021-02-05 15:19:36Z INFO Terminal] WRITE LINE: 
+[2021-02-05 15:19:36Z INFO Terminal] WRITE LINE: 
+[2021-02-05 15:19:37Z WARN GitHubActionsService] Authentication failed with status code 401.
+WWW-Authenticate: Bearer
+Strict-Transport-Security: max-age=2592000
+X-TFS-ProcessId: 0595b198-7038-457e-ba32-843f2f79014e
+ActivityId: 62fa999a-5c81-4f3c-ac81-f502364a9232
+X-TFS-Session: f4922e9f-af27-4b00-88ce-ed47fa30d13c
+X-VSS-E2EID: d0f4bf3e-e713-495c-82c6-97365ef51cb7
+X-VSS-SenderDeploymentId: ac98198d-4d34-0364-420d-bafa6e51dce2
+X-TFS-ServiceError: The+user+%27System%3aPublicAccess%3baaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa%27+is+not+authorized+to+access+this+resource.
+X-VSS-S2STargetService: 0000005A-0000-8888-8000-000000000000/visualstudio.com
+X-MSEdge-Ref: Ref A: C04D2C868E1E4C698D88104D0F14B0A8 Ref B: MAD30EDGE0821 Ref C: 2021-02-05T15:19:37Z
+Date: Fri, 05 Feb 2021 15:19:36 GMT
+
+[2021-02-05 15:19:37Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.credentials_rsaparams
+[2021-02-05 15:19:37Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Youcode\Desktop\deploy_reactapp\actions-runner\.credentials_rsaparams
+[2021-02-05 15:19:38Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2021-02-05 15:19:38Z INFO MessageListener] Session created.
+[2021-02-05 15:19:38Z INFO Terminal] WRITE LINE: 2021-02-05 15:19:38Z: Listening for Jobs
+[2021-02-05 15:19:38Z INFO JobDispatcher] Set runner/worker IPC timeout to 30 seconds.
+[2021-02-05 15:22:20Z INFO HostContext] Runner will be shutdown for UserCancelled
+[2021-02-05 15:22:20Z WARN GitHubActionsService] GET request to https://pipelines.actions.githubusercontent.com/dsEezDOEpkxecRpJu6l8825JZ8M3rEiMYf4R2OoC8zxBeOnJiL/_apis/distributedtask/pools/1/messages?sessionId=840d1331-9b0e-4687-b18e-93db44db1b62 has been cancelled.
+[2021-02-05 15:22:20Z INFO MessageListener] Get next message has been cancelled.
+[2021-02-05 15:22:20Z INFO JobDispatcher] Shutting down JobDispatcher. Make sure all WorkerDispatcher has finished.
