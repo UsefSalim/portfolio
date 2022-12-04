@@ -1,9 +1,0 @@
-﻿{
-  "agentId": 2,
-  "agentName": "YOUSSEF",
-  "poolId": 1,
-  "poolName": "Default",
-  "serverUrl": "https://pipelines.actions.githubusercontent.com/dsEezDOEpkxecRpJu6l8825JZ8M3rEiMYf4R2OoC8zxBeOnJiL",
-  "gitHubUrl": "https://github.com/UsefSalim/deployReactapp",
-  "workFolder": "_work"
-}
